@@ -14,6 +14,12 @@ configurations {
     }
 }
 
+dependencyManagement {
+    imports {
+        mavenBom 'com.amazonaws:aws-java-sdk-bom:1.12.243'
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -23,6 +29,12 @@ dependencies {
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'software.amazon.awssdk:secretsmanager:2.17.209'
     implementation 'software.amazon.awssdk:sts:2.17.209'
+    implementation 'software.amazon.awssdk:ses:2.17.214'
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+
+
+    implementation 'com.amazonaws:aws-java-sdk-ses'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
