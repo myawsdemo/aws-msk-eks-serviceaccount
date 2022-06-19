@@ -12,18 +12,18 @@ public class AmazonSESSampleSMTP {
 
     // Replace sender@example.com with your "From" address.
     // This address must be verified.
-    static final String FROM = "seanguo@amazon.com";
+    static final String FROM = "d";
     static final String FROMNAME = "Sender Name";
 
     // Replace recipient@example.com with a "To" address. If your account
     // is still in the sandbox, this address must be verified.
-    static final String TO = "38651850@qq.com";
+    static final String TO = "3";
 
     // Replace smtp_username with your Amazon SES SMTP user name.
-    static final String SMTP_USERNAME = "ses-smtp-user.20220619-143738";
+    static final String SMTP_USERNAME = "90909";
 
     // Replace smtp_password with your Amazon SES SMTP password.
-    static final String SMTP_PASSWORD = "AKIA2ND3TZWEVTMOWAR2,BJGHUewpLhxNJ7CQuF2onc5d228UHXlhougLqyup8ZYB";
+    static final String SMTP_PASSWORD = "8888";
 
     // The name of the Configuration Set to use for this message.
     // If you comment out or remove this variable, you will also need to
@@ -36,7 +36,7 @@ public class AmazonSESSampleSMTP {
     static final String HOST = "email-smtp.us-east-1.amazonaws.com";
 
     // The port you will connect to on the Amazon SES SMTP endpoint.
-    static final int PORT = 25;
+    static final int PORT = 465;
 
     static final String SUBJECT = "Amazon SES test (SMTP interface accessed using Java)";
 
@@ -52,7 +52,7 @@ public class AmazonSESSampleSMTP {
 
         // Create a Properties object to contain connection configuration information.
         Properties props = System.getProperties();
-        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.transport.protocol", "smtps");
         props.put("mail.smtp.port", PORT);
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.auth", "true");
@@ -87,6 +87,7 @@ public class AmazonSESSampleSMTP {
             System.out.println("Email sent!");
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             System.out.println("The email was not sent.");
             System.out.println("Error message: " + ex.getMessage());
         }
